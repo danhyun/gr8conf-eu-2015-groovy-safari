@@ -1,0 +1,87 @@
+= Groovy Safari
+Dan Hyun <https://github.com/danhyun[@danhyun]>
+2015-05-07
+
+== Groovy
+
+* Productive and Happy programming language
+* Know Java? You know Groovy!
+* Flat learning "curve"
+* Great tools and libraries
+* Great community
+
+== Details
+
+* Open source
+* Great IDE Support
+* JVM interoperability (call Java from Groovy, call Groovy from Java)
+
+== Getting Started
+
+=== Install Groovy
+
+Download binaries
+
+http://groovy-lang.org/download.html
+
+=== Or use GVM :D
+
+[source,bash]
+.One simple command
+----
+$ curl -s get.gvmtool.net | bash
+----
+
+http://gvmtool.net/
+
+
+// LEARNING GROOVY SECTION
+
+== Learning the basics
+
+neo learning kungfu
+
+=== syntax?
+
+list literal
+map literal
+closure
+functional methods
+default groovy methods
+string interpolation
+bean convention to access members
+
+== Official Groovy Docs
+
+http://groovy-lang.org/single-page-documentation.html
+
+== Groovy Koans
+
+https://github.com/nadavc/groovykoans
+
+== Books
+
+http://www.manning.com/koenig2/
+
+
+// GROOVY USAGE
+
+== fast scripting
+
+process csv
+make rest calls
+devops type stuff
+
+== convenience in jvm apps
+
+== testing
+spock
+geb
+
+== webapps
+ratpack, grails, spring-boot + groovy
+
+
+include::01-hello.adoc[]
+
+== Questions?
