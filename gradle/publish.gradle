@@ -11,7 +11,7 @@ buildscript {
 apply plugin: 'org.ajoberstar.github-pages'
 
 githubPages {
-  repoUri = 'https://${ghToken}@github.com/danhyun/git-2015-session.git'
+  repoUri = 'https://${ghToken}@github.com/danhyun/gr8conf-eu-2015-groovy-safari.git'
   pages {
     from(file("$rootDir/build/asciidoc/revealjs")) {
       into "."
