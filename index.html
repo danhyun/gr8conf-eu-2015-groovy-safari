@@ -104,6 +104,43 @@ default groovy methods
 string interpolation
 bean convention to access members</p></div></section></section>
 <section id="official-groovy-docs" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Official Groovy Docs</h2><div class="paragraph"><p><a href="http://groovy-lang.org/single-page-documentation.html" class="bare">http://groovy-lang.org/single-page-documentation.html</a></p></div></section>
+<section id="gradle" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Gradle</h2><div class="paragraph"><p><a href="http://gradle.org/" class="bare">http://gradle.org/</a></p></div></section>
+<section id="install" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Install</h2><div class="paragraph"><p>Binaries</p></div>
+<div class="paragraph"><p><a href="http://gradle.org/downloads/" class="bare">http://gradle.org/downloads/</a></p></div></section>
+<section><section id="via-gvm" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Via GVM</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">danny@ARK ~
+$ gvm install gradle 2.4
+
+Downloading: gradle 2.4
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   354    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 62.4M  100 62.4M    0     0  1129k      0  0:00:56  0:00:56 --:--:--  870k
+
+Installing: gradle 2.4
+Done installing!
+
+Do you want gradle 2.4 to be set as default? (Y/n): y
+
+Setting gradle 2.4 as default.</code></pre></div></div></section><section id="on-windows" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>On Windows</h2><div class="paragraph"><p>:(</p></div>
+<div class="literalblock"><div class="content"><pre>ln: `/c/Users/danny/.gvm/gradle/current': cannot overwrite directory</pre></div></div></section><section id="remedy" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Remedy</h2><div class="listingblock"><div class="title">gitbash</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ rm -rf ~/.gvm/gradle/current/</code></pre></div></div>
+<div class="listingblock"><div class="title">In cmd or powershell</div><div class="content"><pre class="CodeRay"><code class="cmd language-cmd">C:\Users\danny&gt; cd .gvm/gradle
+C:\Users\danny\.gvm\gradle&gt; mklink /D current 2.4
+symbolic link created for current &lt;&lt;===&gt;&gt; 2.4</code></pre></div></div></section><section id="success" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Success</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ gradle -version
+
+------------------------------------------------------------
+Gradle 2.4
+------------------------------------------------------------
+
+Build time:   2015-05-05 08:09:24 UTC
+Build number: none
+Revision:     5c9c3bc20ca1c281ac7972643f1e2d190f2c943c
+
+Groovy:       2.3.10
+Ant:          Apache Ant(TM) version 1.9.4 compiled on April 29 2014
+JVM:          1.8.0_45 (Oracle Corporation 25.45-b02)
+OS:           Windows 8.1 6.3 amd64</code></pre></div></div></section></section>
 <section id="groovy-koans" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy Koans</h2><div class="paragraph"><p><a href="http://nadavc.com/groovykoans/" class="bare">http://nadavc.com/groovykoans/</a></p></div></section>
 <section id="download" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Download</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ git clone git@github.com:nadavc/groovykoans.git</code></pre></div></div></section>
 <section id="get-started" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Get started</h2><div class="listingblock"><div class="title">View Tasks (Gradle)</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ cd groovykoans
