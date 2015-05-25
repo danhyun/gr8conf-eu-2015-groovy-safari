@@ -55,6 +55,8 @@ bean convention to access members
 
 http://groovy-lang.org/single-page-documentation.html
 
+include::gradle.adoc[]
+
 include::groovy-koans.adoc[]
 
 == Books
