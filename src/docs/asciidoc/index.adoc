@@ -55,9 +55,7 @@ bean convention to access members
 
 http://groovy-lang.org/single-page-documentation.html
 
-== Groovy Koans
-
-https://github.com/nadavc/groovykoans
+include::groovy-koans.adoc[]
 
 == Books
 

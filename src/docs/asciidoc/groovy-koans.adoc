@@ -1,0 +1,109 @@
+== Groovy Koans
+
+http://nadavc.com/groovykoans/
+
+== Download
+
+[source,bash]
+----
+$ git clone git@github.com:nadavc/groovykoans.git
+----
+
+== Get started
+
+.View Tasks (Gradle)
+[source,bash,subs="verbatim,quotes"]
+----
+$ cd groovykoans
+$ ./gradlew tasks
+... lots of output ...
+
+Other tasks
+-----------
+*removeSolutions* - Removes the solutions from all Koans, so you can start fresh!
+wrapper
+
+Rules
+-----
+... more output ...
+*Pattern: koan<Number>*: Runs a single Koan
+----
+
+== Prep work
+
+.Remove Solutions
+[source,bash]
+----
+$ ./gradlew removeSolutions
+Removed 73 solutions from Koans. Good luck!
+----
+
+== Work flow
+
+----
+$ ./gradlew clean check -i
+Groovy Koans 0.5:
+The truth is out there. Anybody got the URL?
+--------------------------------------------
+... lots of output ...
+
+52 tests completed, 50 failed, 2 skipped
+
+FAILURE: Build failed with an exception.
+----
+
+== Optional
+
+Set up for use with IDE
+
+.IntelliJ
+[source, bash]
+----
+$ ./gradlew idea
+----
+
+.Eclipse
+[source, bash]
+----
+$ ./gradlew eclipse
+----
+
+== Your first koan
+
+image::koan-fail-1-1.PNG[]
+
+== Fix test
+
+== Recheck
+
+Use dynamic Gradle task
+
+.Previous `./gradlew tasks` output
+[source,bash,subs="verbatim,quotes"]
+----
+Rules
+-----
+*Pattern: koan<Number>*: Runs a single Koan
+----
+
+=== Run a specific Koan
+
+[source,bash,subs="verbatim,quotes"]
+----
+$ ./gradlew koan01
+Groovy Koans 0.5:
+Latest survey shows that 3 out of 4 people make up 75% of the world's population.
+---------------------------------------------------------------------------------
+
+Running exercises in test03_MapsInGroovy()..................FAILURE
+Running exercises in test05_ElvisAndSafeNavigation()........FAILURE
+Running exercises in test02_GStrings()......................FAILURE
+Running exercises in test04_Lists().........................FAILURE
+Running exercises in test01_AssertionsAndSomeSyntax().......*SUCCESS*
+
+5 tests completed, 4 failed
+----
+
+== Enlightenment
+
+image::enlightened.jpg[]
