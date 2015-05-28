@@ -1,0 +1,327 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8" /><meta name="author" content="Dan Hyun" /><title>Groovy Safari</title><meta content="yes" name="apple-mobile-web-app-capable" /><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style" /><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport" /><link href="reveal.js/css/reveal.css" rel="stylesheet" /><link rel="stylesheet" href="reveal.js/css/theme/black.css" id="theme" /><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css" /><style>/* Stylesheet for CodeRay to match GitHub theme | MIT License | http://foundation.zurb.com */
+/*pre.CodeRay {background-color:#f7f7f8;}*/
+.CodeRay .line-numbers{border-right:1px solid #d8d8d8;padding:0 0.5em 0 .25em}
+.CodeRay span.line-numbers{display:inline-block;margin-right:.5em;color:rgba(0,0,0,.3)}
+.CodeRay .line-numbers strong{font-weight: normal}
+table.CodeRay{border-collapse:separate;border-spacing:0;margin-bottom:0;border:0;background:none}
+table.CodeRay td{vertical-align: top}
+table.CodeRay td.line-numbers{text-align:right}
+table.CodeRay td.line-numbers>pre{padding:0;color:rgba(0,0,0,.3)}
+table.CodeRay td.code{padding:0 0 0 .5em}
+table.CodeRay td.code>pre{padding:0}
+.CodeRay .debug{color:#fff !important;background:#000080 !important}
+.CodeRay .annotation{color:#007}
+.CodeRay .attribute-name{color:#000080}
+.CodeRay .attribute-value{color:#700}
+.CodeRay .binary{color:#509}
+.CodeRay .comment{color:#998;font-style:italic}
+.CodeRay .char{color:#04d}
+.CodeRay .char .content{color:#04d}
+.CodeRay .char .delimiter{color:#039}
+.CodeRay .class{color:#458;font-weight:bold}
+.CodeRay .complex{color:#a08}
+.CodeRay .constant,.CodeRay .predefined-constant{color:#008080}
+.CodeRay .color{color:#099}
+.CodeRay .class-variable{color:#369}
+.CodeRay .decorator{color:#b0b}
+.CodeRay .definition{color:#099}
+.CodeRay .delimiter{color:#000}
+.CodeRay .doc{color:#970}
+.CodeRay .doctype{color:#34b}
+.CodeRay .doc-string{color:#d42}
+.CodeRay .escape{color:#666}
+.CodeRay .entity{color:#800}
+.CodeRay .error{color:#808}
+.CodeRay .exception{color:inherit}
+.CodeRay .filename{color:#099}
+.CodeRay .function{color:#900;font-weight:bold}
+.CodeRay .global-variable{color:#008080}
+.CodeRay .hex{color:#058}
+.CodeRay .integer,.CodeRay .float{color:#099}
+.CodeRay .include{color:#555}
+.CodeRay .inline{color:#00}
+.CodeRay .inline .inline{background:#ccc}
+.CodeRay .inline .inline .inline{background:#bbb}
+.CodeRay .inline .inline-delimiter{color:#d14}
+.CodeRay .inline-delimiter{color:#d14}
+.CodeRay .important{color:#555;font-weight:bold}
+.CodeRay .interpreted{color:#b2b}
+.CodeRay .instance-variable{color:#008080}
+.CodeRay .label{color:#970}
+.CodeRay .local-variable{color:#963}
+.CodeRay .octal{color:#40e}
+.CodeRay .predefined{color:#369}
+.CodeRay .preprocessor{color:#579}
+.CodeRay .pseudo-class{color:#555}
+.CodeRay .directive{font-weight:bold}
+.CodeRay .type{font-weight:bold}
+.CodeRay .predefined-type{color:inherit}
+.CodeRay .reserved,.CodeRay .keyword {color:#000;font-weight:bold}
+.CodeRay .key{color:#808}
+.CodeRay .key .delimiter{color:#606}
+.CodeRay .key .char{color:#80f}
+.CodeRay .value{color:#088}
+.CodeRay .regexp .delimiter{color:#808}
+.CodeRay .regexp .content{color:#808}
+.CodeRay .regexp .modifier{color:#808}
+.CodeRay .regexp .char{color:#d14}
+.CodeRay .regexp .function{color:#404;font-weight:bold}
+.CodeRay .string{color:#d20}
+.CodeRay .string .string .string{background:#ffd0d0}
+.CodeRay .string .content{color:#d14}
+.CodeRay .string .char{color:#d14}
+.CodeRay .string .delimiter{color:#d14}
+.CodeRay .shell{color:#d14}
+.CodeRay .shell .delimiter{color:#d14}
+.CodeRay .symbol{color:#990073}
+.CodeRay .symbol .content{color:#a60}
+.CodeRay .symbol .delimiter{color:#630}
+.CodeRay .tag{color:#008080}
+.CodeRay .tag-special{color:#d70}
+.CodeRay .variable{color:#036}
+.CodeRay .insert{background:#afa}
+.CodeRay .delete{background:#faa}
+.CodeRay .change{color:#aaf;background:#007}
+.CodeRay .head{color:#f8f;background:#505}
+.CodeRay .insert .insert{color:#080}
+.CodeRay .delete .delete{color:#800}
+.CodeRay .change .change{color:#66f}
+.CodeRay .head .head{color:#f4f}</style><link href="reveal.js/lib/css/zenburn.css" rel="stylesheet" /><script type="text/javascript">document.write( '<link rel="stylesheet" href="reveal.js/css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script><link rel="stylesheet" href="//raw.githubusercontent.com/danielpietzsch/CodeRay-GitHub-Theme/master/coderay.css">
+<style>
+.slides section:first-child {
+  top: 65% !important;
+}
+</style></head><body><div class="reveal"><div class="slides"><section data-background-color="black" data-background-image="./images/lead.png" data-background-size="contain"><h2>Groovy Safari</h2><p><small>Dan Hyun</small></p></section><section id="who" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Who?</h2><div class="paragraph"><p>Dan Hyun</p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-twitter"></i></span> <a href="https://twitter.com/Lspacewalker"><span class="icon"><i class="fa fa-at"></i></span>LSpacewalker</a></p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-github"></i></span> <a href="https://github.com/danhyun"><span class="icon"><i class="fa fa-at"></i></span>danhyun</a></p></div>
+<div class="paragraph"><p>Software Engineer <span class="icon"><i class="fa fa-at"></i></span> <a href="http://www.mindspark.com/">Mindspark</a></p></div></section>
+<section id="what" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>What?</h2><div class="paragraph"><p>Introduction to Groovy</p></div>
+<div class="paragraph"><p>Tools and tips for working with Groovy</p></div></section>
+<section><section id="groovy" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy</h2><div class="paragraph"><p>Amazing general purpose programming language</p></div><div class="paragraph"><p><span class="icon"><i class="fa fa-check"></i></span> Productivity</p></div><div class="paragraph"><p><span class="icon"><i class="fa fa-check"></i></span> Readability</p></div><div class="paragraph"><p><span class="icon"><i class="fa fa-check"></i></span> Happiness</p></div></section><section id="jvm" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>JVM</h2><div class="ulist"><ul><li><p>Know Java? You already know Groovy</p></li><li><p>Compiles to JVM bytecode</p></li><li><p>Fully interoperable with Java</p></li></ul></div></section><section id="community" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Community</h2><div class="ulist"><ul><li><p>Amazing OSS Projects</p></li><li><p>Active twitter</p></li><li><p>Great tools and libraries</p></li></ul></div></section></section>
+<section><section id="getting-started" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Getting Started</h2></section><section id="install-groovy" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Install Groovy</h2><div class="paragraph"><p>Download binaries</p></div>
+<div class="paragraph"><p><a href="http://groovy-lang.org/download.html" class="bare">http://groovy-lang.org/download.html</a></p></div>
+<div class="paragraph"><p>Or use GVM (Recommended <span class="icon"><i class="fa fa-thumbs-o-up"></i></span>)</p></div>
+<div class="paragraph"><p><a href="http://gvmtool.net/" class="bare">http://gvmtool.net/</a></p></div>
+<div class="listingblock"><div class="title">One simple command</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ curl -s get.gvmtool.net | bash</code></pre></div></div></section></section>
+<section id="java-is-groovy" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Java is Groovy</h2><div class="listingblock"><div class="title">HelloWorld.java</div><div class="content"><pre class="CodeRay"><code class="java language-java"><span class="directive">public</span> <span class="type">class</span> <span class="class">HelloWorld</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Hello, World!</span><span class="delimiter">&quot;</span></span>);
+  }
+}</code></pre></div></div></section>
+<section id="hello-world-em-groovified-em" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Hello World, <em>Groovified</em></h2><div class="listingblock"><div class="title">HelloWorld.groovy</div><div class="content"><pre class="CodeRay"><code class="groovy language-groovy"><span class="directive">public</span> <span class="type">class</span> <span class="class">HelloWorld</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Hello, World!</span><span class="delimiter">&quot;</span></span>);
+  }
+}</code></pre></div></div></section>
+<section id="ok" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Ok&#8230;&#8203;</h2><div class="imageblock" style=""><div class="content"><img src="./images/more.jpg" alt="more" /></div></div></section>
+<section><section id="groovy-2" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy++</h2><div class="listingblock"><div class="title">HelloWorld.groovy</div><div class="content"><pre class="CodeRay"><code class="groovy language-groovy"><span class="directive">public</span> <span class="type">class</span> <span class="class">HelloWorld</span> {
+  <span class="directive">public</span> <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Hello, World!</span><span class="delimiter">&quot;</span></span>) <span class="comment">// 1</span>
+  }
+}</code></pre></div></div><div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>Drop the semicolon!</td></tr></table></div></section><section id="groovy-3" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy++</h2><div class="listingblock"><div class="title">HelloWorld.groovy</div><div class="content"><pre class="CodeRay"><code class="groovy language-groovy"><span class="type">class</span> <span class="class">HelloWorld</span> { <span class="comment">// 1</span>
+  <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) { <span class="comment">// 1</span>
+    <span class="predefined-type">System</span>.out.println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Hello, World!</span><span class="delimiter">&quot;</span></span>)
+  }
+}</code></pre></div></div>
+<div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>Drop public, everything is public in Groovy</td></tr></table></div></section><section id="groovy-4" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy++</h2><div class="listingblock"><div class="title">HelloWorld.groovy</div><div class="content"><pre class="CodeRay"><code class="groovy language-groovy"><span class="type">class</span> <span class="class">HelloWorld</span> {
+  <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    println(<span class="string"><span class="delimiter">&quot;</span><span class="content">Hello, World!</span><span class="delimiter">&quot;</span></span>) <span class="comment">// 1</span>
+  }
+}</code></pre></div></div>
+<div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>Drop System.out</td></tr></table></div></section><section id="groovy-5" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy++</h2><div class="listingblock"><div class="title">HelloWorld.groovy</div><div class="content"><pre class="CodeRay"><code class="groovy language-groovy"><span class="type">class</span> <span class="class">HelloWorld</span> {
+  <span class="directive">static</span> <span class="type">void</span> main(<span class="predefined-type">String</span><span class="type">[]</span> args) {
+    println <span class="string"><span class="delimiter">&quot;</span><span class="content">Hello, World!</span><span class="delimiter">&quot;</span></span> <span class="comment">// 1</span>
+  }
+}</code></pre></div></div>
+<div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>Drop parentheses</td></tr></table></div></section><section id="groovy-6" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy++</h2><div class="listingblock"><div class="title">HelloWorld.groovy</div><div class="content"><pre class="CodeRay"><code class="groovy language-groovy">println <span class="string"><span class="delimiter">&quot;</span><span class="content">Hello, World!</span><span class="delimiter">&quot;</span></span> <span class="comment">// 1</span></code></pre></div></div>
+<div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>Don&#8217;t need a main class wrapper to run code</td></tr></table></div></section></section>
+<section><section id="running-groovy" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Running Groovy</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ groovy HelloWorld.groovy
+Hello, World!</code></pre></div></div></section><section id="groovy-eval" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy Eval</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ groovy -e 'println &quot;Hello, World!&quot; # 1</code></pre></div></div>
+<div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>Skip the file altogether</td></tr></table></div></section><section id="groovy-console" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy Console</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ groovyConsole</code></pre></div></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-long-arrow-down"></i></span></p></div>
+<div class="paragraph"><p>Invokes</p></div>
+<div class="paragraph"><p><span class="icon"><i class="fa fa-long-arrow-down"></i></span></p></div>
+<div class="imageblock" style=""><div class="content"><img src="./images/groovyConsole.PNG" alt="groovyConsole" /></div></div></section></section>
+<section><section id="groovyc" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>groovyc</h2><div class="paragraph"><p>Groovy is always compiled before execution</p></div><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ groovyc HelloWorld.groovy &amp;&amp; ls -l HelloWorld*
+-rw-r--r--    1 danny    Administ     5152 May 27 22:53 HelloWorld.class
+-rw-r--r--    1 danny    Administ       87 May 27 22:46 HelloWorld.groovy</code></pre></div></div></section><section id="running-the-generated-class-file" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Running the generated class File</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ java -cp &quot;.:$GROOVY_HOME/embeddable/groovy-all-2.4.3.jar&quot; HelloWorld
+Hello, World!</code></pre></div></div></section></section>
+<section id="syntax" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>syntax?</h2><div class="paragraph"><p>list literal
+map literal
+closure
+functional methods
+default groovy methods
+string interpolation
+bean convention to access members</p></div></section>
+<section id="official-groovy-docs" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Official Groovy Docs</h2><div class="paragraph"><p><a href="http://groovy-lang.org/single-page-documentation.html" class="bare">http://groovy-lang.org/single-page-documentation.html</a></p></div></section>
+<section id="gradle" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Gradle</h2><div class="paragraph"><p><a href="http://gradle.org/" class="bare">http://gradle.org/</a></p></div></section>
+<section id="install" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Install</h2><div class="paragraph"><p>Binaries</p></div>
+<div class="paragraph"><p><a href="http://gradle.org/downloads/" class="bare">http://gradle.org/downloads/</a></p></div></section>
+<section><section id="via-gvm" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Via GVM</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">danny@ARK ~
+$ gvm install gradle 2.4
+
+Downloading: gradle 2.4
+
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+  0   354    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+100 62.4M  100 62.4M    0     0  1129k      0  0:00:56  0:00:56 --:--:--  870k
+
+Installing: gradle 2.4
+Done installing!
+
+Do you want gradle 2.4 to be set as default? (Y/n): y
+
+Setting gradle 2.4 as default.</code></pre></div></div></section><section id="on-windows" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>On Windows</h2><div class="paragraph"><p>:(</p></div>
+<div class="literalblock"><div class="content"><pre>ln: `/c/Users/danny/.gvm/gradle/current': cannot overwrite directory</pre></div></div></section><section id="remedy" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Remedy</h2><div class="listingblock"><div class="title">gitbash</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ rm -rf ~/.gvm/gradle/current/</code></pre></div></div>
+<div class="listingblock"><div class="title">In cmd or powershell</div><div class="content"><pre class="CodeRay"><code class="cmd language-cmd">C:\Users\danny&gt; cd .gvm/gradle
+C:\Users\danny\.gvm\gradle&gt; mklink /D current 2.4
+symbolic link created for current &lt;&lt;===&gt;&gt; 2.4</code></pre></div></div></section><section id="success" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Success</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ gradle -version
+
+------------------------------------------------------------
+Gradle 2.4
+------------------------------------------------------------
+
+Build time:   2015-05-05 08:09:24 UTC
+Build number: none
+Revision:     5c9c3bc20ca1c281ac7972643f1e2d190f2c943c
+
+Groovy:       2.3.10
+Ant:          Apache Ant(TM) version 1.9.4 compiled on April 29 2014
+JVM:          1.8.0_45 (Oracle Corporation 25.45-b02)
+OS:           Windows 8.1 6.3 amd64</code></pre></div></div></section></section>
+<section id="groovy-koans" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy Koans</h2><div class="paragraph"><p><a href="http://nadavc.com/groovykoans/" class="bare">http://nadavc.com/groovykoans/</a></p></div></section>
+<section id="download" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Download</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ git clone git@github.com:nadavc/groovykoans.git</code></pre></div></div></section>
+<section id="get-started" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Get started</h2><div class="listingblock"><div class="title">View Tasks (Gradle)</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ cd groovykoans
+$ ./gradlew tasks
+... lots of output ...
+
+Other tasks
+-----------
+<strong>removeSolutions</strong> - Removes the solutions from all Koans, so you can start fresh!
+wrapper
+
+Rules
+-----
+... more output ...
+<strong>Pattern: koan&lt;Number&gt;</strong>: Runs a single Koan</code></pre></div></div></section>
+<section id="prep-work" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Prep work</h2><div class="listingblock"><div class="title">Remove Solutions</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ ./gradlew removeSolutions
+Removed 73 solutions from Koans. Good luck!</code></pre></div></div></section>
+<section id="work-flow" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Work flow</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code>$ ./gradlew clean check -i
+Groovy Koans 0.5:
+The truth is out there. Anybody got the URL?
+--------------------------------------------
+... lots of output ...
+
+52 tests completed, 50 failed, 2 skipped
+
+FAILURE: Build failed with an exception.</code></pre></div></div></section>
+<section id="optional" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Optional</h2><div class="paragraph"><p>Set up for use with IDE</p></div>
+<div class="listingblock"><div class="title">IntelliJ</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ ./gradlew idea</code></pre></div></div>
+<div class="listingblock"><div class="title">Eclipse</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ ./gradlew eclipse</code></pre></div></div></section>
+<section id="your-first-koan" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Your first koan</h2><div class="imageblock" style=""><div class="content"><img src="./images/koan-fail-1-1.PNG" alt="koan fail 1 1" /></div></div></section>
+<section id="fix-test" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Fix test</h2></section>
+<section><section id="recheck" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Recheck</h2><div class="paragraph"><p>Use dynamic Gradle task</p></div><div class="listingblock"><div class="title">Previous <code>./gradlew tasks</code> output</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">Rules
+-----
+<strong>Pattern: koan&lt;Number&gt;</strong>: Runs a single Koan</code></pre></div></div></section><section id="run-a-specific-koan" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Run a specific Koan</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ ./gradlew koan01
+Groovy Koans 0.5:
+Latest survey shows that 3 out of 4 people make up 75% of the world's population.
+---------------------------------------------------------------------------------
+
+Running exercises in test03_MapsInGroovy()..................FAILURE
+Running exercises in test05_ElvisAndSafeNavigation()........FAILURE
+Running exercises in test02_GStrings()......................FAILURE
+Running exercises in test04_Lists().........................FAILURE
+Running exercises in test01_AssertionsAndSomeSyntax().......<strong>SUCCESS</strong>
+
+5 tests completed, 4 failed</code></pre></div></div></section></section>
+<section id="enlightenment" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Enlightenment</h2><div class="imageblock" style=""><div class="content"><img src="./images/enlightened.jpg" alt="enlightened" /></div></div></section>
+<section id="books" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Books</h2><div class="paragraph"><p><a href="http://www.manning.com/koenig2/" class="bare">http://www.manning.com/koenig2/</a></p></div></section>
+<section id="fast-scripting" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>fast scripting</h2><div class="paragraph"><p>process csv
+make rest calls
+devops type stuff</p></div></section>
+<section id="convenience-in-jvm-apps" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>convenience in jvm apps</h2></section>
+<section id="testing" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>testing</h2><div class="paragraph"><p>spock
+geb</p></div></section>
+<section id="webapps" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>webapps</h2><div class="paragraph"><p>ratpack, grails, spring-boot + groovy</p></div></section>
+<section id="some-slides" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Some slides</h2><div class="ulist step"><ul><li class="fragment"><p>1</p></li><li class="fragment"><p>two</p></li><li class="fragment"><p>drei</p></li></ul></div>
+<aside class="notes">some notes</aside></section>
+<section id="questions" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Questions?</h2></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script type="text/javascript">// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: true,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: false,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, blood, league, moon, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'linear',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+  dependencies: [
+      { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: 'reveal.js/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: 'reveal.js/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      
+      { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: 'reveal.js/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>
