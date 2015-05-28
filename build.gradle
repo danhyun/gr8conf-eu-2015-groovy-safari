@@ -36,6 +36,8 @@ dependencies {
   gems 'rubygems:asciidoctor-diagram:1.3.0.preview.3'
   gems 'rubygems:slim:2.1.0'
   gems 'rubygems:thread_safe:0.3.4'
+
+  compile 'org.codehaus.groovy:groovy-all:2.4.3'
 }
 
 task download << {
