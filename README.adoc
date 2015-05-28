@@ -1,6 +1,8 @@
 = GR8Conf 2015 Asciidoctor Reveal.js Template
 Dan Hyun<https://github.com/danhyun[@danhyun]>
 
+View here http://danhyun.github.io/gr8conf-eu-2015-groovy-safari
+
 == Local Build
 To build locally, run:
 
