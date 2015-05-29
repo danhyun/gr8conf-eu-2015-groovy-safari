@@ -1,0 +1,165 @@
+== Groovy FU
+
+image::kyle.jpg[]
+
+== Strings
+
+Express yourself
+
+[source, groovy]
+----
+println 'I\'m a string'
+println "Me too"
+println(/So am I!/)
+----
+
+=== GString
+
+[source, groovy]
+----
+println "GStrings are created with a pair of \""
+String value = "interpolation"
+println "They allow for easy $value"
+----
+
+=== String manipulation
+
+[source, groovy]
+----
+println 'You ' + "can " + /concatenate / + 'Strings'
+// You can concatenate Strings
+println ("You can't remove portions of strings" - "'t")
+// You can remove portions of strings
+----
+
+=== Operators
+
+[source, groovy]
+.Equality
+----
+assert 'This'.equals("This")
+assert 'This' == "This" // 1
+----
+<1> `==` invokes `.equals()`
+
+== Operators
+
+== Lists
+
+== Maps
+
+== Objects
+
+[source, java]
+----
+public class Beer {
+  private String brewer;
+  private String name;
+
+  public String getBrewer() { return brewer; }
+  public void setBrewer(String brewer) { this.brewer = brewer; }
+
+  public String getName() { return name; }
+  public void setName(String name) { this.name = name; }
+}
+----
+
+== Java Object Use From Groovy
+
+[source, groovy]
+----
+Beer beer = new Beer()
+beer.setBrewer("GR8Conf")
+beer.setName("Groovy Stout")
+
+assert beer.getBrewer() == "GR8Conf"
+assert beer.getName() == "Groovy Stout"
+----
+
+=== Groovier usage
+
+[source, groovy]
+----
+Beer beer = new Beer()
+beer.brewer = "GR8Conf" // 1
+beer.name = "Groovy Stout" // 1
+
+assert beer.brewer == "GR8Conf" // 2
+assert beer.name == "Groovy Stout" // 2
+----
+<1> Set as if property
+<2> Get as if property
+
+=== Even Groovier
+
+[source, groovy]
+----
+Beer beer = new Beer(brewer: "GR8Conf", name: "Groovy Stout") // 1
+
+assert beer.brewer == "GR8Conf"
+assert beer.name == "Groovy Stout"
+----
+<1> Pass map literal to constructor
+
+=== Even Groovier
+
+[source, groovy]
+----
+Beer beer = [brewer: "GR8Conf", name: "Groovy Stout"] // 1
+
+assert beer.brewer == ("GR8Conf")
+assert beer.name == ("Groovy Stout")
+----
+<1> Use a map as a constructor
+
+== Groovier Beer
+
+Drop +public+ access modifier and semicolons
+
+[source, groovy]
+----
+class GroovyBeer {
+  private String brewer
+  private String name
+
+  String getBrewer() { return brewer }
+  void setBrewer(String brewer) { this.brewer = brewer }
+
+  String getName() { return name }
+  void setName(String name) { this.name = name }
+}
+----
+
+=== Groovier Beer
+
+Properties are automatically private 
+
+Setters/getters are generated
+
+[source, groovy]
+----
+class GroovyBeer {
+  String brewer
+  String name
+}
+----
+
+== Use Groovy Objects from Java
+
+[source, java]
+----
+public class Example {
+  public static void main(String[] args) {
+    GroovyBeer groovyBeer = new GroovyBeer();
+    groovyBeer.setBrewer("GR8Conf");
+    groovyBeer.setName("Groovy Ale");
+    assert groovyBeer.getBrewer().equals("GR8Conf");
+    assert groovyBeer.getName().equals("Groovy Ale");
+  }
+}
+----
+
+
+== Closures
+
+== Functional Methods

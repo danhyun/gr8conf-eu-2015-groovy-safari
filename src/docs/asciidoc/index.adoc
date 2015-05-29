@@ -200,15 +200,7 @@ $ java -cp ".:$GROOVY_HOME/embeddable/groovy-all-2.4.3.jar" HelloWorld
 Hello, World!
 ----
 
-== syntax?
-
-list literal
-map literal
-closure
-functional methods
-default groovy methods
-string interpolation
-bean convention to access members
+include::groovy-fu.adoc[]
 
 == Official Groovy Docs
 
