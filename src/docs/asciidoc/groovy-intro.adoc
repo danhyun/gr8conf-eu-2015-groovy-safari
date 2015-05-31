@@ -1,0 +1,198 @@
+== Who?
+
+Dan Hyun
+
+icon:twitter[] https://twitter.com/Lspacewalker[icon:at[]LSpacewalker]
+
+icon:github[] https://github.com/danhyun[icon:at[]danhyun]
+
+Software Engineer icon:at[] http://www.mindspark.com/[Mindspark]
+
+== What?
+
+Introduction to Groovy
+
+Tools and tips for working with Groovy
+
+== Groovy
+
+Amazing general purpose programming language
+
+icon:check[] Productivity
+
+icon:check[] Readability
+
+icon:check[] Happiness
+
+=== JVM
+
+* Know Java? You already know Groovy
+* Compiles to JVM bytecode
+* Fully interoperable with Java
+
+=== Community
+
+* Amazing OSS Projects
+* Active twitter participation
+* Great tools and libraries
+
+== Getting Started
+
+=== Install Groovy
+
+Download binaries
+
+http://groovy-lang.org/download.html
+
+Or use GVM (Recommended icon:thumbs-o-up[])
+
+http://gvmtool.net/
+
+[source,bash]
+.One simple command
+----
+$ curl -s get.gvmtool.net | bash
+----
+
+
+// LEARNING GROOVY SECTION
+
+== Java is Groovy
+
+[source,java]
+.HelloWorld.java
+----
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello, World!");
+  }
+}
+----
+
+== Hello World, _Groovified_
+
+[source,groovy]
+.HelloWorld.groovy
+----
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello, World!");
+  }
+}
+----
+
+== Ok...
+
+image::more.jpg[]
+
+== Groovy++
+
+[source,groovy]
+.HelloWorld.groovy
+----
+public class HelloWorld {
+  public static void main(String[] args) {
+    System.out.println("Hello, World!") // 1
+  }
+}
+----
+<1> Drop the semicolon!
+
+=== Groovy++
+
+[source,groovy]
+.HelloWorld.groovy
+----
+class HelloWorld { // 1
+  static void main(String[] args) { // 1
+    System.out.println("Hello, World!")
+  }
+}
+----
+<1> Drop +public+, everything is +public+ in Groovy
+
+=== Groovy++
+
+[source,groovy]
+.HelloWorld.groovy
+----
+class HelloWorld {
+  static void main(String[] args) {
+    println("Hello, World!") // 1
+  }
+}
+----
+<1> Drop +System.out+
+
+=== Groovy++
+
+[source,groovy]
+.HelloWorld.groovy
+----
+class HelloWorld {
+  static void main(String[] args) {
+    println "Hello, World!" // 1
+  }
+}
+----
+<1> Drop parentheses
+
+=== Groovy++
+
+[source,groovy]
+.HelloWorld.groovy
+----
+println "Hello, World!" // 1
+----
+<1> Don't need a main class wrapper to run code
+
+== Running Groovy
+
+[source,bash]
+----
+$ groovy HelloWorld.groovy
+Hello, World!
+----
+
+=== Groovy Eval
+
+[source,bash]
+----
+$ groovy -e ' println "Hello, World!" ' #1
+Hello, World!
+----
+<1> Skip the file altogether
+
+=== Groovy Console
+
+[source,bash]
+----
+$ groovyConsole
+----
+
+icon:long-arrow-down[]
+
+Invokes
+
+icon:long-arrow-down[]
+
+image::groovyConsole.PNG[]
+
+== groovyc
+
+Groovy is always compiled before execution
+
+[source, bash]
+----
+$ groovyc HelloWorld.groovy && ls -l HelloWorld*
+-rw-r--r--    1 danny    Administ     5152 May 27 22:53 HelloWorld.class
+-rw-r--r--    1 danny    Administ       87 May 27 22:46 HelloWorld.groovy
+----
+
+=== Running the generated class File
+
+[source, bash]
+----
+$ java -cp ".:$GROOVY_HOME/embeddable/groovy-all-2.4.3.jar" HelloWorld
+Hello, World!
+----
