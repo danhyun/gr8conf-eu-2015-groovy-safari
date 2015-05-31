@@ -97,7 +97,7 @@ table.CodeRay td.code>pre{padding:0}
 <div class="paragraph"><p>Software Engineer <span class="icon"><i class="fa fa-at"></i></span> <a href="http://www.mindspark.com/">Mindspark</a></p></div></section>
 <section id="what" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>What?</h2><div class="paragraph"><p>Introduction to Groovy</p></div>
 <div class="paragraph"><p>Tools and tips for working with Groovy</p></div></section>
-<section><section id="groovy" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy</h2><div class="paragraph"><p>Amazing general purpose programming language</p></div><div class="paragraph"><p><span class="icon"><i class="fa fa-check"></i></span> Productivity</p></div><div class="paragraph"><p><span class="icon"><i class="fa fa-check"></i></span> Readability</p></div><div class="paragraph"><p><span class="icon"><i class="fa fa-check"></i></span> Happiness</p></div></section><section id="jvm" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>JVM</h2><div class="ulist"><ul><li><p>Know Java? You already know Groovy</p></li><li><p>Compiles to JVM bytecode</p></li><li><p>Fully interoperable with Java</p></li></ul></div></section><section id="community" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Community</h2><div class="ulist"><ul><li><p>Amazing OSS Projects</p></li><li><p>Active twitter</p></li><li><p>Great tools and libraries</p></li></ul></div></section></section>
+<section><section id="groovy" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy</h2><div class="paragraph"><p>Amazing general purpose programming language</p></div><div class="paragraph"><p><span class="icon"><i class="fa fa-check"></i></span> Productivity</p></div><div class="paragraph"><p><span class="icon"><i class="fa fa-check"></i></span> Readability</p></div><div class="paragraph"><p><span class="icon"><i class="fa fa-check"></i></span> Happiness</p></div></section><section id="jvm" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>JVM</h2><div class="ulist"><ul><li><p>Know Java? You already know Groovy</p></li><li><p>Compiles to JVM bytecode</p></li><li><p>Fully interoperable with Java</p></li></ul></div></section><section id="community" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Community</h2><div class="ulist"><ul><li><p>Amazing OSS Projects</p></li><li><p>Active twitter participation</p></li><li><p>Great tools and libraries</p></li></ul></div></section></section>
 <section><section id="getting-started" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Getting Started</h2></section><section id="install-groovy" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Install Groovy</h2><div class="paragraph"><p>Download binaries</p></div>
 <div class="paragraph"><p><a href="http://groovy-lang.org/download.html" class="bare">http://groovy-lang.org/download.html</a></p></div>
 <div class="paragraph"><p>Or use GVM (Recommended <span class="icon"><i class="fa fa-thumbs-o-up"></i></span>)</p></div>
@@ -317,46 +317,24 @@ beer.name = <span class="string"><span class="delimiter">&quot;</span><span clas
 <span class="keyword">assert</span> <span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span> == getValueOrDefault(<span class="string"><span class="delimiter">'</span><span class="content"> </span><span class="delimiter">'</span></span>)
 <span class="keyword">assert</span> <span class="string"><span class="delimiter">'</span><span class="content">Hurray</span><span class="delimiter">'</span></span> == getValueOrDefault(<span class="string"><span class="delimiter">'</span><span class="content">Hurray</span><span class="delimiter">'</span></span>)</code></pre></div></div>
 <div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>Elvis (else if) operator, if <code>s</code> is <a href="http://www.groovy-lang.org/semantics.html#Groovy-Truth">Groovy False</a> return right hand operand</td></tr></table></div></section>
-<section id="closures" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Closures</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="groovy language-groovy"></code></pre></div></div></section>
-<section id="functional-methods" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Functional Methods</h2></section>
-<section id="official-groovy-docs" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Official Groovy Docs</h2><div class="paragraph"><p><a href="http://groovy-lang.org/single-page-documentation.html" class="bare">http://groovy-lang.org/single-page-documentation.html</a></p></div></section>
-<section id="gradle" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Gradle</h2><div class="paragraph"><p><a href="http://gradle.org/" class="bare">http://gradle.org/</a></p></div></section>
-<section id="install" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Install</h2><div class="paragraph"><p>Binaries</p></div>
-<div class="paragraph"><p><a href="http://gradle.org/downloads/" class="bare">http://gradle.org/downloads/</a></p></div></section>
-<section><section id="via-gvm" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Via GVM</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">danny@ARK ~
-$ gvm install gradle 2.4
+<section><section id="closures" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Closures</h2><div class="paragraph"><p>Object that captures initialized state and succinctly defines behavior</p></div><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="groovy language-groovy"><span class="predefined-type">String</span> value = <span class="string"><span class="delimiter">'</span><span class="content">world!</span><span class="delimiter">'</span></span>
+Closure c = { <span class="string"><span class="delimiter">&quot;</span><span class="inline"><span class="inline-delimiter">$</span><span class="local-variable">it</span></span><span class="content">, </span><span class="inline"><span class="inline-delimiter">$</span>value</span><span class="delimiter">&quot;</span></span> } <span class="comment">// 1</span>
 
-Downloading: gradle 2.4
+<span class="keyword">assert</span> <span class="string"><span class="delimiter">'</span><span class="content">Hello, world!</span><span class="delimiter">'</span></span> == c(<span class="string"><span class="delimiter">'</span><span class="content">Hello</span><span class="delimiter">'</span></span>) <span class="comment">// 2</span>
+<span class="keyword">assert</span> <span class="string"><span class="delimiter">'</span><span class="content">Hello, world!</span><span class="delimiter">'</span></span> == c.call(<span class="string"><span class="delimiter">'</span><span class="content">Hello</span><span class="delimiter">'</span></span>) <span class="comment">// 3</span></code></pre></div></div><div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>Closure literal syntax, <code>it</code> is implicit argument</td></tr><tr><td><i class="conum" data-value="2"></i><b>2</b></td><td>Invoke closure directory</td></tr><tr><td><i class="conum" data-value="3"></i><b>3</b></td><td>Invoke closure via <code>.call()</code></td></tr></table></div></section><section id="currying" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Currying</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="groovy language-groovy">Closure adder = { a, b -&gt; a + b }
+<span class="keyword">assert</span> <span class="integer">3</span> == adder(<span class="integer">1</span>, <span class="integer">2</span>)
 
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-  0   354    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
-100 62.4M  100 62.4M    0     0  1129k      0  0:00:56  0:00:56 --:--:--  870k
+Closure plusOne = adder.curry(<span class="integer">1</span>)
+<span class="keyword">assert</span> <span class="integer">3</span> == plusOne(<span class="integer">2</span>)</code></pre></div></div></section></section>
+<section id="functional-methods" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Functional Methods</h2><div class="paragraph"><p>Groovy enables functional programming</p></div>
+<div class="listingblock"><div class="content"><pre class="CodeRay"><code class="groovy language-groovy"><span class="keyword">def</span> list = [<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>,<span class="integer">5</span>]
 
-Installing: gradle 2.4
-Done installing!
-
-Do you want gradle 2.4 to be set as default? (Y/n): y
-
-Setting gradle 2.4 as default.</code></pre></div></div></section><section id="on-windows" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>On Windows</h2><div class="paragraph"><p>:(</p></div>
-<div class="literalblock"><div class="content"><pre>ln: `/c/Users/danny/.gvm/gradle/current': cannot overwrite directory</pre></div></div></section><section id="remedy" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Remedy</h2><div class="listingblock"><div class="title">gitbash</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ rm -rf ~/.gvm/gradle/current/</code></pre></div></div>
-<div class="listingblock"><div class="title">In cmd or powershell</div><div class="content"><pre class="CodeRay"><code class="cmd language-cmd">C:\Users\danny&gt; cd .gvm/gradle
-C:\Users\danny\.gvm\gradle&gt; mklink /D current 2.4
-symbolic link created for current &lt;&lt;===&gt;&gt; 2.4</code></pre></div></div></section><section id="success" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Success</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ gradle -version
-
-------------------------------------------------------------
-Gradle 2.4
-------------------------------------------------------------
-
-Build time:   2015-05-05 08:09:24 UTC
-Build number: none
-Revision:     5c9c3bc20ca1c281ac7972643f1e2d190f2c943c
-
-Groovy:       2.3.10
-Ant:          Apache Ant(TM) version 1.9.4 compiled on April 29 2014
-JVM:          1.8.0_45 (Oracle Corporation 25.45-b02)
-OS:           Windows 8.1 6.3 amd64</code></pre></div></div></section></section>
+<span class="keyword">assert</span> <span class="integer">15</span> == list.sum() <span class="comment">// 1</span>
+<span class="keyword">assert</span> [<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>] == list.findAll { <span class="local-variable">it</span> &lt; <span class="integer">4</span> } <span class="comment">// 2</span>
+<span class="keyword">assert</span> [<span class="integer">0</span>,<span class="integer">1</span>,<span class="integer">2</span>,<span class="integer">3</span>,<span class="integer">4</span>] == list.collect { <span class="local-variable">it</span> - <span class="integer">1</span> } <span class="comment">// 3</span>
+<span class="keyword">assert</span> <span class="string"><span class="delimiter">'</span><span class="content">1, 2, 3, 4, 5</span><span class="delimiter">'</span></span> == list.join(<span class="string"><span class="delimiter">'</span><span class="content">, </span><span class="delimiter">'</span></span>) <span class="comment">// 4</span>
+<span class="keyword">assert</span> <span class="integer">120</span> == list.inject(<span class="integer">1</span>) { sum, i -&gt; sum * i } <span class="comment">// 5</span></code></pre></div></div>
+<div class="colist arabic"><table><tr><td><i class="conum" data-value="1"></i><b>1</b></td><td>Sum all elements, accepts closure as variant to return derived value for summation</td></tr><tr><td><i class="conum" data-value="2"></i><b>2</b></td><td>Inclusive filter for all elements that satisfy predicate</td></tr><tr><td><i class="conum" data-value="3"></i><b>3</b></td><td>Akin to <code>.map()</code></td></tr><tr><td><i class="conum" data-value="4"></i><b>4</b></td><td>Concatenates to String</td></tr><tr><td><i class="conum" data-value="5"></i><b>5</b></td><td>Reduce elements to multiplicative product</td></tr></table></div></section>
 <section id="groovy-koans" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Groovy Koans</h2><div class="paragraph"><p><a href="http://nadavc.com/groovykoans/" class="bare">http://nadavc.com/groovykoans/</a></p></div></section>
 <section id="download" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Download</h2><div class="listingblock"><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ git clone git@github.com:nadavc/groovykoans.git</code></pre></div></div></section>
 <section id="get-started" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Get started</h2><div class="listingblock"><div class="title">View Tasks (Gradle)</div><div class="content"><pre class="CodeRay"><code class="bash language-bash">$ cd groovykoans
@@ -403,7 +381,6 @@ Running exercises in test01_AssertionsAndSomeSyntax().......<strong>SUCCESS</str
 
 5 tests completed, 4 failed</code></pre></div></div></section></section>
 <section id="enlightenment" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Enlightenment</h2><div class="imageblock" style=""><div class="content"><img src="./images/enlightened.jpg" alt="enlightened" /></div></div></section>
-<section id="books" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Books</h2><div class="paragraph"><p><a href="http://www.manning.com/koenig2/" class="bare">http://www.manning.com/koenig2/</a></p></div></section>
 <section id="fast-scripting" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>fast scripting</h2><div class="paragraph"><p>process csv
 make rest calls
 devops type stuff</p></div></section>
@@ -411,8 +388,10 @@ devops type stuff</p></div></section>
 <section id="testing" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>testing</h2><div class="paragraph"><p>spock
 geb</p></div></section>
 <section id="webapps" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>webapps</h2><div class="paragraph"><p>ratpack, grails, spring-boot + groovy</p></div></section>
-<section id="some-slides" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Some slides</h2><div class="ulist step"><ul><li class="fragment"><p>1</p></li><li class="fragment"><p>two</p></li><li class="fragment"><p>drei</p></li></ul></div>
-<aside class="notes">some notes</aside></section>
+<section id="resources" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Resources</h2></section>
+<section id="official-groovy-docs" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Official Groovy Docs</h2><div class="paragraph"><p><a href="http://groovy-lang.org/single-page-documentation.html" class="bare">http://groovy-lang.org/single-page-documentation.html</a></p></div></section>
+<section id="books" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Books</h2><div class="paragraph"><p><a href="http://www.manning.com/koenig2/" class="bare">http://www.manning.com/koenig2/</a></p></div></section>
+<section id="twitter" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Twitter</h2><div class="paragraph"><p><code>#groovylang</code></p></div></section>
 <section id="questions" data-background="./images/bg.png" data-background-size="cover" data-background-position="bottom left"><h2>Questions?</h2></section></div></div><script src="reveal.js/lib/js/head.min.js"></script><script src="reveal.js/js/reveal.js"></script><script type="text/javascript">// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
 Reveal.initialize({
   // Display controls in the bottom right corner
