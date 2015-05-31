@@ -162,7 +162,8 @@ Hello, World!
 
 [source,bash]
 ----
-$ groovy -e 'println "Hello, World!" # 1
+$ groovy -e ' println "Hello, World!" ' #1
+Hello, World!
 ----
 <1> Skip the file altogether
 

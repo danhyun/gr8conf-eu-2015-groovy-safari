@@ -13,6 +13,14 @@ println "Me too"
 println(/So am I!/)
 ----
 
+icon:arrow-down[]
+
+----
+I'm a string
+Me too
+So am I!
+----
+
 === GString
 
 [source, groovy]
@@ -22,31 +30,183 @@ String value = "interpolation"
 println "They allow for easy $value"
 ----
 
+icon:arrow-down[]
+
+----
+GStrings are created with a pair of "
+They allow for easy interpolation
+----
+
 === String manipulation
 
 [source, groovy]
 ----
 println 'You ' + "can " + /concatenate / + 'Strings'
-// You can concatenate Strings
 println ("You can't remove portions of strings" - "'t")
-// You can remove portions of strings
 ----
 
-=== Operators
+icon:arrow-down[]
 
-[source, groovy]
-.Equality
 ----
-assert 'This'.equals("This")
-assert 'This' == "This" // 1
+You can concatenate Strings
+You can remove portions of strings
 ----
-<1> `==` invokes `.equals()`
 
 == Operators
 
+Everything is a method call
+
+Operators invoke method calls
+
+=== Example with String comparison
+
+[source, groovy]
+.Plus example
+----
+assert 1 + 1 == 2
+assert 1.plus(1) == 2
+----
+
+=== Equality
+
+[source, groovy]
+.Equality example
+----
+assert 'a' + 'b' == "ab" // 1
+assert ('a'.plus('b')).equals("ab")
+----
+<1> `==` invokes `.equals()`
+
+=== Implement your own
+
+[source,groovy]
+.GroovyBeer.groovy
+----
+class GroovyBeer {
+  String brewer
+  String name
+
+  GroovyBeer plus(GroovyBeer gb) {
+    [brewer: brewer + gb.brewer, name: name + gb.name] // 1
+  }
+}
+----
+<1> Implicit return
+
+[source, groovy]
+----
+GroovyBeer beer1 = [brewer: 'GR8', name: 'Groovy ']
+GroovyBeer beer2 = [brewer: 'Conf', name: 'IPA']
+
+GroovyBeer groovyiestBeer = beer1 + beer2
+
+assert groovyiestBeer.brewer == 'GR8Conf'
+assert groovyiestBeer.name == 'Groovy IPA'
+----
+
 == Lists
 
+[source,java]
+.Lists in Java
+----
+public class Example {
+  public static void main(String[] args) {
+    List<GroovyBeer> beers = new ArrayList<>();
+
+    GroovyBeer b1 = new GroovyBeer();
+    b1.setBrewer("GR8Conf");
+    b1.setName("Groovy Porter");
+    beers.add(b1);
+    
+    GroovyBeer b2 = new GroovyBeer();
+    b2.setBrewer("GR8Conf");
+    b2.setName("Groovy Gose");
+    beers.add(b2);
+
+    for(GroovyBeer b: beers) {
+      System.out.println("I am enjoying a " + b.getName() + " by " + b.getBrewer());
+    }
+
+//    Java 8 Flavor
+//    beers.stream()
+//      .forEach(b -> 
+//        System.out.println("I am enjoying a " + b.getName() + " by " + b.getBrewer()));
+  }
+}
+----
+
+== Lists
+
+[source, groovy]
+----
+List<GroovyBeer> beers = [] // 1
+beers << new GroovyBeer(brewer: 'GR8Conf', name: 'Groovy Porter') // 2
+beers << new GroovyBeer(brewer: 'GR8Conf', name: 'Groovy Gose') // 2
+beers.each { b -> println "I am enjoying a $b.name by $b.brewer" } // 3
+----
+<1> List literal syntax! ArrayList by default
+<2> Invoke `.leftShift()` to add to beer list
+<3> Apply a closure to each beer in beer list
+
+== Lists
+
+[source, groovy]
+.List concat and equality
+----
+List<String> l1 = ['a', 'b'] // 1
+List<String> l2 = ['c', 'd'] // 1
+
+List l3 = l1 + l2 // 2
+assert l3 == ['a', 'b', 'c', 'd'] // 3
+----
+<1> List creation
+<2> List Concatenation
+<3> List equality based on elements and order of elements
+
 == Maps
+
+[source, java]
+----
+public class Example {
+  public static void main(String[] args) {
+    Map<String, GroovyBeer> beerByType = new HashMap<>();
+    GroovyBeer pils = new GroovyBeer();
+    pils.setName("Groovy Pils");
+    beerByType.put("light", pils);
+
+    GroovyBeer sour = new GroovyBeer();
+    sour.setName("Groovy Flemish Ale");
+    beerByType.put("sour", sour);
+
+    beerByType.entrySet()
+      .stream().forEach(e ->
+        System.out.println("Enjoy " + e.getValue().getName() + ", a " + e.getKey() + " beer."));
+  }
+}
+----
+
+== Maps
+
+[source, groovy]
+----
+Map<String, GroovyBeer> beerByType = [:] //1
+beerByType.pils = new GroovyBeer(name: 'Groovy Pils') // 2
+beerByType.sour = new GroovyBeer(name: 'Groovy Flemish Ale') // 2
+
+beerByType.each { e -> println "Enjoy $e.value.name, a $e.key beer"} // 3
+----
+<1> Map literal syntax, `LinkedHashMap` by default
+<2> Populate map as if assigning properties
+<3> Apply closure to entry set
+
+== Maps
+
+Equality
+[source, groovy]
+----
+assert [a: 'foo', b: 'bar'] == [b: 'bar', a: 'foo'] // 1
+----
+<1> Equality is based on entries, order doesn't matter
 
 == Objects
 
@@ -107,8 +267,8 @@ assert beer.name == "Groovy Stout"
 ----
 Beer beer = [brewer: "GR8Conf", name: "Groovy Stout"] // 1
 
-assert beer.brewer == ("GR8Conf")
-assert beer.name == ("Groovy Stout")
+assert beer.brewer == "GR8Conf"
+assert beer.name == "Groovy Stout"
 ----
 <1> Use a map as a constructor
 
@@ -159,7 +319,44 @@ public class Example {
 }
 ----
 
+== Dealing with `null`
+
+[source, groovy]
+----
+String getSomeDeeplyNestedItem(def someItem) {
+  someItem?.foo?.bar?.doesThisExist?.whoCares?.areWeSafe?.desiredItem // 1
+}
+
+assert null  == getSomeDeeplyNestedItem(null)
+assert null  == getSomeDeeplyNestedItem([someItem: null])
+assert 'yay!' == getSomeDeeplyNestedItem(
+   [foo:
+      [bar:
+         [doesThisExist:
+            [whoCares: 
+               [areWeSafe:
+                  [desiredItem: 'yay!']]]]]])
+----
+
+== Dealing with `null`
+
+[source, groovy]
+----
+String getValueOrDefault(String s) {
+  s ?: 'Sorry' // 1
+}
+
+assert 'Sorry' == getValueOrDefault(null)
+assert 'Sorry' == getValueOrDefault('')
+assert ' ' == getValueOrDefault(' ')
+assert 'Hurray' == getValueOrDefault('Hurray')
+----
+<1> Elvis (else if) operator, if `s` is http://www.groovy-lang.org/semantics.html#Groovy-Truth[Groovy False] return right hand operand
 
 == Closures
+
+[source, groovy]
+----
+----
 
 == Functional Methods
