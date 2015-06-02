@@ -1,0 +1,131 @@
+== Daily Groovy Usage 
+
+== File I/O In Java 8
+
+[source, java]
+----
+public class Example {
+  public static void main(String[] args) throws IOException {
+    List<String> buildFile = Files
+      .lines(Paths.get("build.gradle"))
+      .map(s -> "GR8Conf " + s)
+      .collect(Collectors.toList()); // <1>
+
+    File tmp = File.createTempFile("blah", ".tmp");
+    tmp.deleteOnExit();
+
+    Files.write(tmp.toPath(), buildFile); // <2>
+
+    assert buildFile.size() == Files.readAllLines(tmp.toPath()).size();
+
+    assert Files.lines(tmp.toPath())
+        .allMatch(s -> s.startsWith("GR8Conf ")); // <3>
+  }
+}
+----
+<1> Prepend `GR8Conf ` to all lines in file
+<2> Write new lines to a temp File
+<3> All lines written are prefixed with `GR8Conf `
+
+== File IO in Groovy
+
+[source, groovy]
+----
+def newLines = new File('D:/projects/gr8conf-2015-groovy-safari/build.gradle')
+                .readLines()
+                .collect { "GR8Conf $it" } // <1>
+
+def tmpFile = File.createTempFile('blah', '.tmp')
+tmpFile.deleteOnExit()
+
+tmpFile.withPrintWriter { w ->
+  newLines.each { l -> w.println l } // <2>
+}
+
+assert newLines.size() == tmpFile.readLines().size()
+assert tmpFile.eachLine { it.startsWith 'GR8Conf ' } // <3>
+----
+<1> Prepend `GR8Conf ` to all lines in file
+<2> Write new lines to a temp File
+<3> All lines written are prefixed with `GR8Conf `
+
+== Web stuff
+
+[source, groovy]
+.Screen Scraping
+----
+String gr8ConfHTML = 'http://gr8conf.eu'.toURL().text
+assert gr8ConfHTML.length()
+assert gr8ConfHTML
+  .startsWith('<!doctype html> <html class="no-js" ng-app="gr8conf2015">')
+----
+
+== API calls
+
+[source, groovy]
+.Download and parse JSON
+----
+import groovy.json.JsonSlurper
+
+def response = 'https://api.github.com/orgs/groovy/repos'.toURL().text
+def repos = new JsonSlurper().parseText response // <1>
+
+assert repos.size()
+assert repos.name // <2>
+  .sort {a, b -> a.toLowerCase() <=> b.toLowerCase() } ==
+  ['artwork', 'gmaven', 'GMavenPlus',
+   'groovy-android-gradle-plugin', 'groovy-core', 'groovy-eclipse',
+   'groovy-website', 'groovy-windows-installer']
+----
+<1> Parse response text as JSON
+<2> Use dot notation to navigate object graph
+
+== Groovy Sql
+
+[source, groovy]
+----
+import groovy.sql.Sql
+
+Sql sql = Sql.newInstance(
+  url: 'jdbc:h2:mem:db',
+  driver: 'org.h2.Driver',
+  user: 'sa', password: '')
+
+sql.execute('create table beer (name char(255))')
+
+def beers = ['Lager', 'Pale Ale', 'Saison', 'Black IPA']
+beers.each { b ->
+  sql.execute('INSERT INTO `beer` (name) VALUES (?)', b) // <1>
+}
+
+def rows = sql.rows('select * from beer') // <2>
+assert rows.size() == beers.size()
+assert rows.name == beers // <3>
+----
+<1> Insert each beer name into the db
+<2> Simple select, returns `List<GroovyRowResult>`
+<3> Use simple dot notation to access `name` key in each result
+
+
+== More to explore
+
+== Build
+
+Gradle::
+    http://gradle.org/
+
+== Testing
+
+Spock::
+    http://spockframework.github.io/spock/docs/current
+
+Geb::
+    http://www.gebish.org/manual/current/all.html
+
+== Web Frameworks
+
+Ratpack::
+    https://ratpack.io
+
+Grails::
+    https://grails.org/

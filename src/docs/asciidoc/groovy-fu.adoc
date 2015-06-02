@@ -72,7 +72,7 @@ assert 1.plus(1) == 2
 [source, groovy]
 .Equality example
 ----
-assert 'a' + 'b' == "ab" // 1
+assert 'a' + 'b' == "ab" // <1>
 assert ('a'.plus('b')).equals("ab")
 ----
 <1> `==` invokes `.equals()`
@@ -87,7 +87,7 @@ class GroovyBeer {
   String name
 
   GroovyBeer plus(GroovyBeer gb) {
-    [brewer: brewer + gb.brewer, name: name + gb.name] // 1
+    [brewer: brewer + gb.brewer, name: name + gb.name] // <1>
   }
 }
 ----
@@ -139,10 +139,10 @@ public class Example {
 
 [source, groovy]
 ----
-List<GroovyBeer> beers = [] // 1
-beers << new GroovyBeer(brewer: 'GR8Conf', name: 'Groovy Porter') // 2
-beers << new GroovyBeer(brewer: 'GR8Conf', name: 'Groovy Gose') // 2
-beers.each { b -> println "I am enjoying a $b.name by $b.brewer" } // 3
+List<GroovyBeer> beers = [] // <1>
+beers << new GroovyBeer(brewer: 'GR8Conf', name: 'Groovy Porter') // <2>
+beers << new GroovyBeer(brewer: 'GR8Conf', name: 'Groovy Gose') // <2>
+beers.each { b -> println "I am enjoying a $b.name by $b.brewer" } // <3>
 ----
 <1> List literal syntax! ArrayList by default
 <2> Invoke `.leftShift()` to add to beer list
@@ -153,11 +153,11 @@ beers.each { b -> println "I am enjoying a $b.name by $b.brewer" } // 3
 [source, groovy]
 .List concat and equality
 ----
-List<String> l1 = ['a', 'b'] // 1
-List<String> l2 = ['c', 'd'] // 1
+List<String> l1 = ['a', 'b'] // <1>
+List<String> l2 = ['c', 'd'] // <1>
 
-List l3 = l1 + l2 // 2
-assert l3 == ['a', 'b', 'c', 'd'] // 3
+List l3 = l1 + l2 // <2>
+assert l3 == ['a', 'b', 'c', 'd'] // <3>
 ----
 <1> List creation
 <2> List Concatenation
@@ -189,11 +189,11 @@ public class Example {
 
 [source, groovy]
 ----
-Map<String, GroovyBeer> beerByType = [:] //1
-beerByType.pils = new GroovyBeer(name: 'Groovy Pils') // 2
-beerByType.sour = new GroovyBeer(name: 'Groovy Flemish Ale') // 2
+Map<String, GroovyBeer> beerByType = [:] // <1>
+beerByType.pils = new GroovyBeer(name: 'Groovy Pils') // <2>
+beerByType.sour = new GroovyBeer(name: 'Groovy Flemish Ale') // <2>
 
-beerByType.each { e -> println "Enjoy $e.value.name, a $e.key beer"} // 3
+beerByType.each { e -> println "Enjoy $e.value.name, a $e.key beer"} // <3>
 ----
 <1> Map literal syntax, `LinkedHashMap` by default
 <2> Populate map as if assigning properties
@@ -204,7 +204,7 @@ beerByType.each { e -> println "Enjoy $e.value.name, a $e.key beer"} // 3
 Equality
 [source, groovy]
 ----
-assert [a: 'foo', b: 'bar'] == [b: 'bar', a: 'foo'] // 1
+assert [a: 'foo', b: 'bar'] == [b: 'bar', a: 'foo'] // <1>
 ----
 <1> Equality is based on entries, order doesn't matter
 
@@ -241,11 +241,11 @@ assert beer.getName() == "Groovy Stout"
 [source, groovy]
 ----
 Beer beer = new Beer()
-beer.brewer = "GR8Conf" // 1
-beer.name = "Groovy Stout" // 1
+beer.brewer = "GR8Conf" // <1>
+beer.name = "Groovy Stout" // <1>
 
-assert beer.brewer == "GR8Conf" // 2
-assert beer.name == "Groovy Stout" // 2
+assert beer.brewer == "GR8Conf" // <2>
+assert beer.name == "Groovy Stout" // <2>
 ----
 <1> Set as if property
 <2> Get as if property
@@ -254,7 +254,7 @@ assert beer.name == "Groovy Stout" // 2
 
 [source, groovy]
 ----
-Beer beer = new Beer(brewer: "GR8Conf", name: "Groovy Stout") // 1
+Beer beer = new Beer(brewer: "GR8Conf", name: "Groovy Stout") // <1>
 
 assert beer.brewer == "GR8Conf"
 assert beer.name == "Groovy Stout"
@@ -265,7 +265,7 @@ assert beer.name == "Groovy Stout"
 
 [source, groovy]
 ----
-Beer beer = [brewer: "GR8Conf", name: "Groovy Stout"] // 1
+Beer beer = [brewer: "GR8Conf", name: "Groovy Stout"] // <1>
 
 assert beer.brewer == "GR8Conf"
 assert beer.name == "Groovy Stout"
@@ -324,7 +324,7 @@ public class Example {
 [source, groovy]
 ----
 String getSomeDeeplyNestedItem(def someItem) {
-  someItem?.foo?.bar?.doesThisExist?.whoCares?.areWeSafe?.desiredItem // 1
+  someItem?.foo?.bar?.doesThisExist?.whoCares?.areWeSafe?.desiredItem // <1>
 }
 
 assert null  == getSomeDeeplyNestedItem(null)
@@ -343,7 +343,7 @@ assert 'yay!' == getSomeDeeplyNestedItem(
 [source, groovy]
 ----
 String getValueOrDefault(String s) {
-  s ?: 'Sorry' // 1
+  s ?: 'Sorry' // <1>
 }
 
 assert 'Sorry' == getValueOrDefault(null)
@@ -360,10 +360,10 @@ Object that captures initialized state and succinctly defines behavior
 [source, groovy]
 ----
 String value = 'world!'
-Closure c = { "$it, $value" } // 1
+Closure c = { "$it, $value" } // <1>
 
-assert 'Hello, world!' == c('Hello') // 2
-assert 'Hello, world!' == c.call('Hello') // 3
+assert 'Hello, world!' == c('Hello') // <2>
+assert 'Hello, world!' == c.call('Hello') // <3>
 ----
 <1> Closure literal syntax, `it` is implicit argument
 <2> Invoke closure directory
@@ -388,11 +388,11 @@ Groovy enables functional programming
 ----
 def list = [1,2,3,4,5]
 
-assert 15 == list.sum() // 1
-assert [1,2,3] == list.findAll { it < 4 } // 2
-assert [0,1,2,3,4] == list.collect { it - 1 } // 3
-assert '1, 2, 3, 4, 5' == list.join(', ') // 4
-assert 120 == list.inject(1) { sum, i -> sum * i } // 5
+assert 15 == list.sum() // <1>
+assert [1,2,3] == list.findAll { it < 4 } // <2>
+assert [0,1,2,3,4] == list.collect { it - 1 } // <3>
+assert '1, 2, 3, 4, 5' == list.join(', ') // <4>
+assert 120 == list.inject(1) { sum, i -> sum * i } // <5>
 ----
 <1> Sum all elements, accepts closure as variant to return derived value for summation
 <2> Inclusive filter for all elements that satisfy predicate

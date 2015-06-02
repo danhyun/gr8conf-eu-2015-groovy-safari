@@ -8,23 +8,7 @@ include::groovy-fu.adoc[]
 
 include::groovy-koans.adoc[]
 
-// GROOVY USAGE
-
-== fast scripting
-
-process csv
-make rest calls
-devops type stuff
-
-== convenience in jvm apps
-
-== testing
-spock
-geb
-
-== webapps
-ratpack, grails, spring-boot + groovy
-
+include::groovy-everyday.adoc[]
 
 == Resources
 
@@ -38,6 +22,6 @@ http://www.manning.com/koenig2/
 
 == Twitter
 
-`#groovylang`
+https://twitter.com/search?q=%23groovylang&src=typd&vertical=default&f=tweets[`#groovylang`]
 
 == Questions?

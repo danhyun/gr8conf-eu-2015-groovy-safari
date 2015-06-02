@@ -92,7 +92,7 @@ image::more.jpg[]
 ----
 public class HelloWorld {
   public static void main(String[] args) {
-    System.out.println("Hello, World!") // 1
+    System.out.println("Hello, World!") // <1>
   }
 }
 ----
@@ -103,8 +103,8 @@ public class HelloWorld {
 [source,groovy]
 .HelloWorld.groovy
 ----
-class HelloWorld { // 1
-  static void main(String[] args) { // 1
+class HelloWorld { // <1>
+  static void main(String[] args) { // <1>
     System.out.println("Hello, World!")
   }
 }
@@ -118,7 +118,7 @@ class HelloWorld { // 1
 ----
 class HelloWorld {
   static void main(String[] args) {
-    println("Hello, World!") // 1
+    println("Hello, World!") // <1>
   }
 }
 ----
@@ -131,7 +131,7 @@ class HelloWorld {
 ----
 class HelloWorld {
   static void main(String[] args) {
-    println "Hello, World!" // 1
+    println "Hello, World!" // <1>
   }
 }
 ----
@@ -142,7 +142,7 @@ class HelloWorld {
 [source,groovy]
 .HelloWorld.groovy
 ----
-println "Hello, World!" // 1
+println "Hello, World!" // <1>
 ----
 <1> Don't need a main class wrapper to run code
 
